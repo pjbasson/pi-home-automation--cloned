@@ -138,7 +138,7 @@ if __name__ == '__main__':
   thread2.start()
   thread.start()
   parser = argparse.ArgumentParser(description='Echo CherryPy Server')
-  parser.add_argument('--host', default='192.168.144.119')
+  parser.add_argument('--host', default='0.0.0.0')
   parser.add_argument('-p', '--port', default=9000, type=int)
   parser.add_argument('--ssl', action='store_true')
   args = parser.parse_args()
