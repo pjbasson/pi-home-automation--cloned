@@ -1,0 +1,35 @@
+{
+	"relay1":{
+		"label":"Lamp",
+		"times":""
+	},
+	"relay2":{
+		"label":"Lamp 2",
+		"times":""
+	},
+	"relay3":{
+		"label":"Relay 3",
+		"times":""
+	},
+	"relay4":{
+		"label":"Relay 4",
+		"times":""
+	},
+	"relay5":{
+		"label":"Relay 5",
+		"times":""
+	},
+	"relay6":{
+		"label":"Relay 6",
+		"times":""
+	},
+	"relay7":{
+		"label":"Relay 7",
+		"times":""
+	},
+	"relay8":{
+		"label":"Relay 8",
+		"times":""
+	},	
+	"labels":"true"
+}

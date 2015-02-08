@@ -1,0 +1,198 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="/css/jquery-ui.theme.min.css">
+		<link rel="stylesheet" href="/css/jquery-ui.min.css">
+		<link rel="stylesheet" href="/css/jquery-ui.structure.min.css">
+		<link rel="stylesheet" href="/glyphs.css"></head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			.center{text-align: center;}
+			.largeIco{font-size: 3em}
+			.on{color: #C00}
+			.off{color: #999}
+			.icoText{font-size: .5em;}
+			.btn{margin-top: 5px}
+			.inv{display: none;}
+			.icon-sync{color: #0C0;}
+			.icon-sync-problem{color: #F90;}
+			.icon-sync-disabled{color: #C00;}
+		</style>
+		<title>jQ</title>
+	</head>
+	<body>
+		<h1 class="center">&pi; Home Automation</h1>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-1 col-md-offset-11 col-sm-1 col-sm-offset-11 col-xs-offset-11 col-xs-1">
+					<span id="connection" class="icon-sync-problem glyphicon"></span>
+				</div>
+			</div>
+		</div>
+		<div id="panel" class="container-fluid">
+			<div class="row">
+		    	<div id="relay1" data-rid="1" class="relayBtn col-xs-4 col-xs-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 btn btn-default btn-lg"><span class="icon-light-bulb largeIco off glyphicon"></span></br><spam class="icoText">Relay 1</spam></div>
+				<div id="relay2" data-rid="2" class="relayBtn col-xs-4 col-xs-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 btn btn-default btn-lg"><span class="icon-light-bulb largeIco off glyphicon"></span></br><spam class="icoText">Relay 2</spam></div>
+				<div id="relay3" data-rid="3" class="relayBtn col-xs-4 col-xs-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 btn btn-default btn-lg"><span class="icon-light-bulb largeIco off glyphicon"></span></br><span class="icoText">Relay 3</span></div>
+				<div id="relay4" data-rid="4" class="relayBtn col-xs-4 col-xs-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 btn btn-default btn-lg"><span class="icon-light-bulb largeIco off glyphicon"></span></br><span class="icoText">Relay 4</span></div>
+				<div id="relay5" data-rid="5" class="relayBtn col-xs-4 col-xs-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 btn btn-default btn-lg"><span class="icon-light-bulb largeIco off glyphicon"></span></br><span class="icoText">Relay 5</span></div>
+				<div id="relay6" data-rid="6" class="relayBtn col-xs-4 col-xs-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 btn btn-default btn-lg"><span class="icon-light-bulb largeIco off glyphicon"></span></br><span class="icoText">Relay 6</span></div>
+				<div id="relay7" data-rid="7" class="relayBtn col-xs-4 col-xs-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 btn btn-default btn-lg"><span class="icon-light-bulb largeIco off glyphicon"></span></br><span class="icoText">Relay 7</span></div>
+				<div id="relay8" data-rid="8" class="relayBtn col-xs-4 col-xs-offset-2 col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 btn btn-default btn-lg"><span class="icon-light-bulb largeIco off glyphicon"></span></br><span class="icoText">Relay 8</span></div>
+			</div>
+			<div class="row">
+		  		<div id="settingsButton" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-offset-1 col-xs-10 center btn btn-default btn-lg">
+		  		<span class="icon-wrench largeIco glyphicon"></span></br>
+		  		<span class="icoText">Settings</span></div>
+	  		</div>
+		</div>
+
+		<div id="settings" class="container-fluid inv">
+			<div class="row">
+				<div id="settingsArea" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-offset-1 col-xs-10">
+					<div id="settingsAccordion">
+					  <h3>Relay 1</h3>
+					  <div>
+					  </div>
+					  <h3>Relay 2</h3>
+					  <div>
+					  </div>
+					  <h3>Relay 3</h3>
+					  <div>
+					  </div>
+					  <h3>Relay 4</h3>
+					  <div>
+					  </div>
+					  <h3>Relay 5</h3>
+					  <div>
+					  </div>
+					  <h3>Relay 6</h3>
+					  <div>
+					  </div>
+					  <h3>Relay 7</h3>
+					  <div>
+					  </div>
+					  <h3>Relay 8</h3>
+					  <div>
+					  </div>
+					</div>
+				</div>
+		  		<div id="panelButton" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-offset-1 col-xs-10 center btn btn-default btn-lg">
+		  		<span class="icon-power largeIco glyphicon"></span></br>
+		  		<span class="icoText">Panel</span></div>
+	  		</div>
+		</div>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/jquery-ui.min.js"></script>
+		<!--<script src="/js/bootstrap.min.js"></script>-->
+		<script>
+		var k,ws,reconnect;
+		var DEBUG=true;
+		$(document).ready(function (){
+			connectWS();
+			// Display settings panel
+			$('#settingsButton').click(function(){
+				$('#panel').css('display','none');
+				$('#settings').css('display','block');
+			});
+
+			// Display panel.
+			$('#panelButton').click(function(){
+				$('#panel').css('display','block');
+				$('#settings').css('display','none');
+			});
+
+			// Handle on-off buttons.
+			$('.relayBtn').click(function(){
+				if (ws.readyState==1){
+					k=$(this);
+					if ($(this).children('.glyphicon').hasClass('on')){
+						//send off signal
+						dbg('{"c":"off","r":"'+$(this).data('rid')+'"}');
+						ws.send('{"c":"off","r":"'+$(this).data('rid')+'"}');
+					}else{
+						//send on signal
+						dbg('{"c":"on","r":"'+$(this).data('rid')+'"}');
+						ws.send('{"c":"on","r":"'+$(this).data('rid')+'"}');
+					}
+				}
+			});
+
+			// function to handle manual reconnect attempt.
+			$('#connection').click(function(){
+				if ($(this).hasClass('icon-sync-disabled')){
+					clearTimeout(reconnect);
+					connectWS();
+				}
+			});
+
+			$('#settingsAccordion').accordion({ collapsible: true,
+			heightStyle: "content" });
+			dbg('READY')
+		});
+
+		function connectWS(){
+			addr = 'ws://'+window.location.host+'/ws';
+			dbg('Connecting...');
+			$("#connection").removeClass('icon-sync-disabled icon-sync').addClass('icon-sync-problem')
+			if (window.WebSocket) {
+				ws = new WebSocket(addr);
+			}
+			else if (window.MozWebSocket) {
+				ws = MozWebSocket(addr);
+			}
+			else {
+				alert('What crap browser are you using??');
+				dbg('WebSocket Not Supported');
+				return;
+			}
+			ws.onclose=function(){
+				// Timer to reconnect.
+				$("#connection").removeClass('icon-sync-problem icon-sync').addClass('icon-sync-disabled')
+				dbg('Connection Closed');
+				reconnect=setTimeout(connectWS,6000);
+			}
+
+			ws.onopen=function(){
+				dbg('Connected');
+				ws.send('{"c":"update"}')
+				$("#connection").removeClass('icon-sync-problem icon-sync-disabled').addClass('icon-sync')
+				//clearTimeout(reconnect);
+			}
+
+			ws.onerror=function(e){
+				dbg("Socket error: " + e.data);
+			}
+
+
+			ws.onmessage = function (evt) {
+				eval('wsMsg='+evt.data);
+				if (wsMsg.hasOwnProperty('status')){
+					for (i=0;i<8;i++){
+						n=i+1;
+						if (wsMsg.status[i]==0){
+							$('#relay'+(i+1).toString()+'>.glyphicon').removeClass('off').addClass('on');
+						}else{
+							$('#relay'+(i+1).toString()+'>.glyphicon').removeClass('on').addClass('off');
+						}
+					}
+
+				}else if(wsMsg.hasOwnProperty('labels')){
+					for (i=0;i<8;i++){
+						$('#relay'+(i+1)+'>.icoText').html(wsMsg['relay'+(i+1)].label);
+					}
+				}
+			}
+			return 0;
+		}
+
+		function dbg(m){
+			if (DEBUG){
+				console.log(m);
+			}
+		}
+
+		</script>
+	</body>
+</html>
