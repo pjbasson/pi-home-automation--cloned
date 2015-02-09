@@ -93,6 +93,7 @@ def timing(arg):
 		currentDT=datetime.datetime.now()
 		cT=time2sec(currentDT.hour, currentDT.minute, currentDT.second)
 		data = json.loads(jsonLabels);
+		dow=datetime.datetime.today().weekday()
 		for o in data:
 			id=data[o]['id']
 			times=data[o]['times']
@@ -103,7 +104,8 @@ def timing(arg):
 				eT=time2sec(eTime[0],eTime[1],eTime[2])
 				#print cT,sT,eT,cT-sT,cT-eT
 				if (abs(cT-sT)<pollInterval):
-					GPIO.output(ALL_CH[id-1],GPIO.LOW)
+					if ((1<<dow)&t['dow']!=0):
+						GPIO.output(ALL_CH[id-1],GPIO.LOW)
 				if (abs(cT-eT)<pollInterval):
 					GPIO.output(ALL_CH[id-1],GPIO.HIGH)
 				
