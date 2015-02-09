@@ -106,8 +106,10 @@ def timing(arg):
 				if (abs(cT-sT)<pollInterval):
 					if ((1<<dow)&t['dow']!=0):
 						GPIO.output(ALL_CH[id-1],GPIO.LOW)
+						cherrypy.engine.publish('websocket-broadcast', statusJSON(getStatus()))
 				if (abs(cT-eT)<pollInterval):
 					GPIO.output(ALL_CH[id-1],GPIO.HIGH)
+					cherrypy.engine.publish('websocket-broadcast', statusJSON(getStatus()))
 				
 		time.sleep(pollInterval)
 	return 0;
