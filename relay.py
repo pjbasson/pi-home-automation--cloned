@@ -3,6 +3,7 @@ import argparse
 import random
 import os
 import time
+import datetime
 import threading
 import signal
 import sys
@@ -106,6 +107,13 @@ def readJsonLabels():
 	fo=open('relayLabel.json')
 	jsonLabels=fo.read()
 	fo.close()
+
+def time_in_range(start, end, x):
+    """Return true if x is in the range [start, end]"""
+    if start <= end:
+        return start <= x <= end
+    else:
+        return start <= x or x <= end
 
 GPIO.setmode(GPIO.BOARD)
 CH1=11
