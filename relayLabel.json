@@ -1,35 +1,49 @@
 {
 	"relay1":{
+		"id":1,
 		"label":"Lamp",
-		"times":""
+		"times":[ {
+				"start":[6,30,0],
+				"end":[8,45,0]
+				},
+				{
+				"start":[1,38,0],
+				"end":[1,39,0]
+				}]
 	},
 	"relay2":{
+		"id":2,
 		"label":"Lamp 2",
-		"times":""
+		"times":[{"start":[10,0,0],"end":[1,34,0]}]
 	},
 	"relay3":{
+		"id":3,
 		"label":"Relay 3",
-		"times":""
+		"times":[]
 	},
 	"relay4":{
+		"id":4,
 		"label":"Relay 4",
-		"times":""
+		"times":[]
 	},
 	"relay5":{
+		"id":5,
 		"label":"Relay 5",
-		"times":""
+		"times":[]
 	},
 	"relay6":{
+		"id":6,
 		"label":"Relay 6",
-		"times":""
+		"times":[]
 	},
 	"relay7":{
+		"id":7,
 		"label":"Relay 7",
-		"times":""
+		"times":[]
 	},
 	"relay8":{
+		"id":8,
 		"label":"Relay 8",
-		"times":""
-	},	
-	"labels":"true"
+		"times":[]
+	}
 }
