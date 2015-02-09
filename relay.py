@@ -88,9 +88,26 @@ def stpoll(arg):
 def timing(arg):
 	# read from json timing file and switch tho lights on / off based on the time of the day.
 	global jsonLabels
+	pollInterval=3;
 	while pollStatus:
+		currentDT=datetime.datetime.now()
+		cT=time2sec(currentDT.hour, currentDT.minute, currentDT.second)
 		data = json.loads(jsonLabels);
-		time.sleep(3)
+		for o in data:
+			id=data[o]['id']
+			times=data[o]['times']
+			for t in times:
+				sTime=t['start']
+				eTime=t['end']
+				sT=time2sec(sTime[0],sTime[1],sTime[2])
+				eT=time2sec(eTime[0],eTime[1],eTime[2])
+				#print cT,sT,eT,cT-sT,cT-eT
+				if (abs(cT-sT)<pollInterval):
+					GPIO.output(ALL_CH[id-1],GPIO.LOW)
+				if (abs(cT-eT)<pollInterval):
+					GPIO.output(ALL_CH[id-1],GPIO.HIGH)
+				
+		time.sleep(pollInterval)
 	return 0;
 
 def signal_handler(signal, frame):
@@ -114,6 +131,9 @@ def time_in_range(start, end, x):
         return start <= x <= end
     else:
         return start <= x or x <= end
+
+def time2sec(h,m,s):
+	return s+(m*60)+(h*3600);
 
 GPIO.setmode(GPIO.BOARD)
 CH1=11
