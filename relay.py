@@ -17,6 +17,7 @@ from ws4py.messaging import TextMessage
 
 class ChatWebSocketHandler(WebSocket):
 	def received_message(self, m):
+		global jsonLabels
 		msg=m.data.decode("utf-8")
 		try:
 			jo=json.loads(msg)
@@ -34,6 +35,14 @@ class ChatWebSocketHandler(WebSocket):
 			r=int(jo["r"])
 			GPIO.output(ALL_CH[r-1],GPIO.HIGH)
 			print "Off:",r-1
+		elif(cmd=="updateLabels"):
+			readJsonLabels()
+			d=json.loads(jsonLabels);
+			d['relay'+str(jo['id'])]['label']=jo['newLabel']
+			jsonLabels=json.dumps(d);
+			saveJsonLabels(jsonLabels);
+			cherrypy.engine.publish('websocket-broadcast', '%s ' %jsonLabels)
+			print "Saved and Broadcasted";
 		else:
 			cherrypy.log("Not a command");
 		#self.send(statusJSON(getStatus()))
@@ -121,6 +130,11 @@ def signal_handler(signal, frame):
 	cherrypy.engine.stop()
 	cherrypy.engine.exit()
 	cherrypy.log('You pressed Ctrl+C!')
+
+def saveJsonLabels(jsTxt):
+	fo=open('relayLabel.json','w')
+	fo.write(jsTxt)
+	fo.close()
 
 def readJsonLabels():
 	# Read 

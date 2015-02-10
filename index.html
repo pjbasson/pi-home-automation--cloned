@@ -126,9 +126,7 @@
 					connectWS();
 				}
 			});
-
-			$('#settingsAccordion').accordion({ collapsible: true,
-			heightStyle: "content" });
+			$('#settingsAccordion').accordion({heightStyle: "content"});
 			dbg('READY')
 		});
 
@@ -179,9 +177,20 @@
 					}
 
 				}else if(wsMsg.hasOwnProperty('relay1')){
+					settingsAccordingHTML='';
 					for (i=0;i<8;i++){
-						$('#relay'+(i+1)+'>.icoText').html(wsMsg['relay'+(i+1)].label);
+						$('#relay'+(i+1)+'>.icoText').html(wsMsg['relay'+(i+1)].label)
+						settingsAccordingHTML+='<h3>Relay '+(i+1)+'</h3><div><input type="text" value="'+wsMsg['relay'+(i+1)].label+'" class="RelayLabel" data-relayid="'+(i+1)+'" /></br>'+
+						'</div>';
 					}
+					$('#settingsAccordion').html(settingsAccordingHTML);
+					
+					$('.RelayLabel').change(function(){
+						ws.send('{"c":"updateLabels","id":'+$(this).data('relayid')+',"newLabel":"'+$(this).val()+'"}');
+					});
+					$('#settingsAccordion').accordion("refresh");
+				}else{
+					console.log(wsMsg);
 				}
 			}
 			return 0;
