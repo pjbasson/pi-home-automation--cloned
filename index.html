@@ -19,7 +19,7 @@
 			.icon-sync-problem{color: #F90;}
 			.icon-sync-disabled{color: #C00;}
 		</style>
-		<title>jQ</title>
+		<title>Auto Pi</title>
 	</head>
 	<body>
 		<h1 class="center">&pi; Home Automation</h1>
@@ -118,7 +118,14 @@
 					}
 				}
 			});
-
+			
+			$(window).focus(function() {
+				if (ws.readyState==ws.CLOSED){
+					$("#connection").removeClass('icon-sync-problem icon-sync').addClass('icon-sync-disabled')
+					connectWS();
+				}
+			});
+			
 			// function to handle manual reconnect attempt.
 			$('#connection').click(function(){
 				if ($(this).hasClass('icon-sync-disabled')){
